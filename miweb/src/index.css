@@ -1,8 +1,18 @@
+/* index.css */
+
 /* Estilos generales */
 body {
     background-color: #121212;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body.light-mode {
+    background-color: #ffffff;
+    color: #121212;
 }
 
 /* Estilos para la animación de flotación */
@@ -31,8 +41,13 @@ body {
 
 /* Estilos para el navbar */
 .navbar-style {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px; /* Altura del navbar */
     background-color: #1c1c1c;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que el navbar esté por encima del contenido */
 }
 
 body.light-mode .navbar-style {
@@ -61,7 +76,6 @@ body.light-mode .navbar-style .navbar-link {
     color: rgba(0, 0, 0, 0.75);
 }
 
-/* Cambiar estilo del enlace activo */
 .navbar-style .active.navbar-link {
     color: #ffffff !important;
     opacity: 1;
@@ -114,35 +128,46 @@ body.light-mode .navbar-style .language-button:hover {
     background-color: #FF4500;
     border-color: #FF4500;
 }
+
 /* Estilos para el footer */
 .footer {
     background-color: #1c1c1c;
     color: #ffffff;
-    padding: 10px 0; /* Reducimos el padding para disminuir el tamaño del footer */
+    padding: 20px 0;
 }
 
-.footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+body.light-mode .footer {
+    background-color: #ffffff;
 }
 
-.footer-logo-img {
-    width: 50px; /* Ajustamos el tamaño de la imagen si es necesario */
-    margin-right: 10px;
-}
-
-.footer-brand {
-    font-size: 14px; /* Ajustamos el tamaño de la fuente para mejor proporción */
-    font-weight: 500;
-    color: #FFD700;
-}
-
-/* Nueva clase para contener el logo y el nombre */
 .footer-logo-container {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.footer-logo-img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.footer-brand {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFD700;
+}
+
+body.light-mode .footer-brand,
+body.light-mode .footer-nav a,
+body.light-mode .footer-social h5,
+body.light-mode .footer-social-icons a,
+body.light-mode .footer-copy {
+    color: #FF4500;
+}
+
+body.light-mode .footer-nav a:hover,
+body.light-mode .footer-social-icons a:hover {
+    color: #FFD700;
 }
 
 .footer-nav {
@@ -168,38 +193,6 @@ body.light-mode .navbar-style .language-button:hover {
     color: #FF4500;
 }
 
-body.light-mode .footer {
-    background-color: #ffffff;
-}
-
-/* Colores según el modo */
-body.light-mode .footer-brand,
-body.light-mode .footer-nav a,
-body.light-mode .footer-social h5,
-body.light-mode .footer-social-icons a,
-body.light-mode .footer-copy {
-    color: #FF4500; /* Naranja rojizo para mejor visibilidad en modo claro */
-}
-
-body.light-mode .footer-nav a:hover,
-body.light-mode .footer-social-icons a:hover {
-    color: #FFD700;
-}
-
-body.dark-mode .footer-brand,
-body.dark-mode .footer-nav a,
-body.dark-mode .footer-social h5,
-body.dark-mode .footer-social-icons a,
-body.dark-mode .footer-copy {
-    color: #FFD700;
-}
-
-body.dark-mode .footer-nav a:hover,
-body.dark-mode .footer-social-icons a:hover {
-    color: #FF4500;
-}
-
-/* Sección de redes sociales y 'Conecta conmigo' */
 .footer-social {
     display: flex;
     align-items: center;
@@ -211,7 +204,7 @@ body.dark-mode .footer-social-icons a:hover {
     margin-right: 10px;
     font-size: 14px;
     font-weight: 500;
-    color: inherit; /* Hereda el color definido según el modo */
+    color: inherit;
 }
 
 .footer-social-icons {
@@ -221,7 +214,7 @@ body.dark-mode .footer-social-icons a:hover {
 }
 
 .footer-social-icons a {
-    color: inherit; /* Hereda el color definido según el modo */
+    color: inherit;
     font-size: 20px;
     transition: color 0.3s;
 }
@@ -230,11 +223,10 @@ body.dark-mode .footer-social-icons a:hover {
     color: #FF4500;
 }
 
-/* Ajustes para el texto de derechos de autor */
 .footer-copy {
     text-align: left;
     font-size: 12px;
-    color: #808080; /* Un gris para diferenciar del resto del texto */
+    color: #808080;
     margin-top: 10px;
 }
 
@@ -242,9 +234,151 @@ body.light-mode .footer-copy {
     color: #606060;
 }
 
-/* Hacemos que el texto de derechos de autor ocupe toda la fila */
 .footer-bottom {
     width: 100%;
     text-align: left;
     margin-top: 10px;
+}
+
+/* Estilos para las secciones */
+section {
+    padding-top: 120px; /* Aumentado para evitar superposición con el navbar */
+}
+
+body {
+    scroll-padding-top: 70px; /* Altura del navbar */
+}
+
+section {
+    scroll-margin-top: 70px; /* Altura del navbar */
+}
+
+/* Estilos para el Main */
+.main-section {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+body.light-mode .main-section {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.main-section h1 {
+    color: #FFD700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-section p {
+    color: #b3b3b3;
+}
+
+body.light-mode .main-section p {
+    color: #4a4a4a;
+}
+
+/* Estilos para Skills y Projects */
+.skills-section, .projects-section {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 60px 0;
+}
+
+body.light-mode .skills-section,
+body.light-mode .projects-section {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+.skills-list .skill-item, .projects-list .project-item {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+body.light-mode .skills-list .skill-item,
+body.light-mode .projects-list .project-item {
+    background-color: #f9f9f9;
+    color: #121212;
+}
+
+.skills-section h1, .projects-section h1 {
+    color: #FFD700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.skills-list .skill-item h2,
+.projects-list .project-item h2 {
+    color: #FF4500;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.skills-list .skill-item p,
+.projects-list .project-item p {
+    color: #b3b3b3;
+}
+
+body.light-mode .skills-list .skill-item p,
+body.light-mode .projects-list .project-item p {
+    color: #4a4a4a;
+}
+
+/* Enlaces en Skills y Projects */
+.skills-list .skill-item a,
+.projects-list .project-item a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.skills-list .skill-item a:hover,
+.projects-list .project-item a:hover {
+    color: #FF4500;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .navbar-style .navbar-link {
+        padding: 10px 15px;
+    }
+
+    .navbar-style .dark-mode-button,
+    .navbar-style .language-button {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-social {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .main-section h1 {
+        font-size: 36px;
+    }
+
+    .skills-section h1, .projects-section h1 {
+        font-size: 36px;
+    }
+
+    .skills-list .skill-item h2,
+    .projects-list .project-item h2 {
+        font-size: 20px;
+    }
+
+    .skills-list .skill-item p,
+    .projects-list .project-item p {
+        font-size: 16px;
+    }
 }

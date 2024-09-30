@@ -1,0 +1,79 @@
+{
+  "Home": "Home",
+  "Skills": "Skills",
+  "Projects": "Projects",
+  "Contact": "Contact",
+  "Sobre Mí": "About Me",
+  "Proyectos relacionados": "Related Projects",
+  "Ver Proyecto": "View Project",
+  "Ver Repositorio": "View Repository",
+  "¡Hola, soy Angel Ricardo Gadea!": "Hello, I am Angel Ricardo Gadea!",
+  "¡Bienvenido a mi portafolio!": "Welcome to my portfolio!",
+  "Cloud Engineer": "Cloud Engineer",
+  "Analista de Middleware Sistemas Operativos Base de Datos": "Middleware Analyst for Operating Systems and Databases",
+  "DevOps": "DevOps",
+  "Especialista DevOps.": "DevOps Specialist.",
+  "Desde que era niño, a los 7 años, recibí mi primera computadora y me enamoré de sus infinitas posibilidades. Ese momento fue el inicio de mi pasión por la tecnología. Pasaba horas explorando cada rincón del sistema, probando sus capacidades y aprendiendo cómo funcionaba todo. A medida que crecía, mi entusiasmo por la computación se transformó en un deseo profundo por aprender a programar.": "When I was a child, at the age of 7, I received my first computer and fell in love with its infinite possibilities. That moment marked the beginning of my passion for technology. I spent hours exploring every corner of the system, testing its capabilities, and learning how everything worked. As I grew older, my enthusiasm for computing turned into a deep desire to learn programming.",
+  "Estudié HTML y CSS en mis primeros proyectos, y con cada avance sentía una enorme satisfacción al ver mis páginas web en funcionamiento. Sin embargo, mi curiosidad me llevó a ir más allá: exploré JavaScript, el lenguaje que realmente despertó mi pasión por la programación. Esto me condujo a aprender Node.js para desarrollo backend y profundizar en bases de datos como PostgreSQL y MongoDB, lo cual me permitió trabajar con datos estructurados y no estructurados, ampliando mi conocimiento en el manejo de datos.": "I studied HTML and CSS in my early projects, and with each progress I felt immense satisfaction seeing my web pages in action. However, my curiosity led me further: I explored JavaScript, the language that truly ignited my passion for programming. This led me to learn Node.js for backend development and delve deeper into databases like PostgreSQL and MongoDB, which allowed me to work with structured and unstructured data, expanding my knowledge in data management.",
+  "En 2016, entendí que el desarrollo de software y la infraestructura eran dos mundos que deseaba unir. Así, comencé mi trayectoria en DevOps. Desde entonces, he adquirido un amplio conocimiento en la nube, abarcando plataformas como Azure, AWS y GCP. Dominar estas tecnologías me permite diseñar e implementar soluciones basadas en contenedores con Docker y Kubernetes, así como automatizar infraestructuras con herramientas como Jenkins, Terraform y Ansible.": "In 2016, I realized that software development and infrastructure were two worlds I wanted to unite. Thus, I began my journey in DevOps. Since then, I have gained extensive knowledge in cloud platforms like Azure, AWS, and GCP. Mastering these technologies has enabled me to design and implement container-based solutions with Docker and Kubernetes, as well as automate infrastructures with tools like Jenkins, Terraform, and Ansible.",
+  "Poseo conocimientos sólidos en scripting con Bash y PowerShell, además de experiencia en servidores Nginx y Apache, lo cual me permite gestionar y optimizar entornos. Mi enfoque siempre ha sido ofrecer soluciones integrales, uniendo mis habilidades de programación y gestión de infraestructura en la nube, para proporcionar resultados eficientes y escalables en cada proyecto.": "I have solid scripting skills with Bash and PowerShell, as well as experience in managing Nginx and Apache servers, which allows me to manage and optimize environments. My focus has always been on providing comprehensive solutions, combining my programming skills and cloud infrastructure management to deliver efficient and scalable results in every project.",
+  "SkillsContent": {
+    "AWS": {
+      "description": "Extensive experience in managing and deploying scalable infrastructures in AWS. I have used services like EC2, S3, RDS, and VPC to create robust solutions.",
+      "usageTime": "Usage Time: 5 years.",
+      "relatedProjects": "Cloud Infrastructure Project, CI/CD Pipeline with Jenkins"
+    },
+    "Terraform": {
+      "description": "Expert in Infrastructure as Code with Terraform, automating resource provisioning across multiple cloud providers.",
+      "usageTime": "Usage Time: 4 years.",
+      "relatedProjects": "Cloud Infrastructure Project"
+    },
+    "Docker": {
+      "description": "Using Docker to create consistent development environments and deploy containerized applications.",
+      "usageTime": "Usage Time: 5 years.",
+      "relatedProjects": "CI/CD Pipeline with Jenkins, Backend Development with Node.js"
+    },
+    "Jenkins": {
+      "description": "Configuration and maintenance of CI/CD pipelines with Jenkins to automate the continuous integration and deployment process.",
+      "usageTime": "Usage Time: 4 years.",
+      "relatedProjects": "CI/CD Pipeline with Jenkins"
+    },
+    "Node.js": {
+      "description": "Backend application development using Node.js, creating RESTful APIs and efficient web services.",
+      "usageTime": "Usage Time: 6 years.",
+      "relatedProjects": "Backend Development with Node.js"
+    },
+    "PostgreSQL": {
+      "description": "Management and design of relational databases with PostgreSQL for high-performance applications.",
+      "usageTime": "Usage Time: 5 years.",
+      "relatedProjects": "Backend Development with Node.js"
+    },
+    "MongoDB": {
+      "description": "Implementation of NoSQL databases with MongoDB for applications that require flexibility in data management.",
+      "usageTime": "Usage Time: 4 years.",
+      "relatedProjects": "Backend Development with Node.js"
+    },
+    "Ansible": {
+      "description": "Automation of configuration and deployment tasks with Ansible to ensure environment consistency.",
+      "usageTime": "Usage Time: 3 years.",
+      "relatedProjects": "Cloud Infrastructure Project"
+    }
+  },
+  "ProjectsContent": {
+    "Cloud Infrastructure Project": {
+      "description": "Implementation of scalable infrastructure in AWS using Terraform.",
+      "link": "http://example.com/cloud-infrastructure",
+      "repo": "http://github.com/usuario/cloud-infrastructure"
+    },
+    "CI/CD Pipeline with Jenkins": {
+      "description": "Automation of application deployment with Jenkins and Docker.",
+      "link": "http://example.com/project-cicd",
+      "repo": "http://gitlab.com/usuario/project-cicd"
+    },
+    "Backend Development with Node.js": {
+      "description": "RESTful API for user management and authentication.",
+      "link": "http://example.com/backend-development",
+      "repo": "http://github.com/usuario/backend-development"
+    }
+  }
+}

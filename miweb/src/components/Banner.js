@@ -4,14 +4,20 @@ import headerImg from "../assets/img/linux.png"; // Imagen del pingüino
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import { useTranslation } from 'react-i18next';
 
 const Banner = () => {
+  const { t, i18n } = useTranslation();
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Cloud Ingineer", "Analista de Middleware Sistemas Operativos Base de Datos ", "DevOps"];
+  const [toRotate, setToRotate] = useState([
+    t("Cloud Engineer"),
+    t("Analista de Middleware Sistemas Operativos Base de Datos"),
+    t("DevOps")
+  ]);
   const period = 2000;
 
   useEffect(() => {
@@ -20,7 +26,7 @@ const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text]);
+  }, [text, delta]);
 
   const tick = () => {
     let i = loopNum % toRotate.length;
@@ -47,6 +53,20 @@ const Banner = () => {
     }
   }
 
+  // Actualizar toRotate cuando cambia el idioma
+  useEffect(() => {
+    const updatedToRotate = [
+      t("Cloud Engineer"),
+      t("Analista de Middleware Sistemas Operativos Base de Datos"),
+      t("DevOps")
+    ];
+    setToRotate(updatedToRotate);
+    setLoopNum(0);
+    setText('');
+    setIsDeleting(false);
+    setDelta(300 - Math.random() * 100);
+  }, [i18n.language, t]);
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -55,10 +75,14 @@ const Banner = () => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <span className="tagline">Especialista DevOps.</span>
-                  <h1>{`¡Hola, soy Angel Ricardo Gadea!`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Cloud Engineer", "AgileOps", "DevOps" ]'><span className="wrap">{text}</span></span></h1>
-                  <p>¡Bienvenido a mi portafolio!</p>
-                  <button onClick={() => console.log('connect')}>¡Conectar! <ArrowRightCircle size={25} /></button>
+                  <span className="tagline">{t('Especialista DevOps.')}</span>
+                  <h1>{`${t('¡Hola, soy Angel Ricardo Gadea!')} `}
+                    <span className="txt-rotate" dataPeriod="1000">
+                      <span className="wrap">{text}</span>
+                    </span>
+                  </h1>
+                  <p>{t('¡Bienvenido a mi portafolio!')}</p>
+                  <button onClick={() => console.log('connect')}>{t('¡Conectar!')} <ArrowRightCircle size={25} /></button>
                 </div>}
             </TrackVisibility>
           </Col>
@@ -77,3 +101,4 @@ const Banner = () => {
 }
 
 export default Banner;
+  
