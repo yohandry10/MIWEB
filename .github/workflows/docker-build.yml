@@ -1,6 +1,5 @@
 name: Docker Build and Push
 
-# Activar este flujo de trabajo en cada push a la rama principal
 on:
   push:
     branches:
@@ -30,10 +29,10 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: ./                # Contexto donde se encuentra el Dockerfile
-        file: ./Dockerfile         # Ruta al archivo Dockerfile en la raíz del proyecto
+        context: ./miweb/                  # La carpeta donde está el Dockerfile (ajusta esta ruta)
+        file: ./miweb/Dockerfile           # Ruta exacta al archivo Dockerfile
         push: true
-        tags: yohandry10/first-r:latest  # Cambia a tu nombre de usuario y repositorio de Docker Hub
+        tags: yohandry10/first-r:latest    # Cambia a tu nombre de usuario y repositorio de Docker Hub
 
     # 5. Verificar la imagen Docker construida
     - name: Verify Docker Image
