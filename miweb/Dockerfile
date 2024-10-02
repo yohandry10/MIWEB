@@ -4,15 +4,14 @@ FROM node:16-alpine AS build
 # Establece el directorio de trabajo
 WORKDIR /app
 
-# Copia los archivos de dependencias
-COPY miweb/package*.json ./
-
+# Copia los archivos de dependencias (ajusta la ruta)
+COPY package*.json ./
 
 # Instala las dependencias
 RUN npm install
 
-# Copia el resto del código de la aplicación
-COPY ./ ./
+# Copia el resto del código de la aplicación (ajusta la ruta si es necesario)
+COPY ./ .
 
 # Construye la aplicación para producción
 RUN npm run build
@@ -26,9 +25,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 # Copia los archivos construidos desde la etapa anterior
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Copia el archivo de configuración personalizado para Nginx
-COPY miweb/nginx.conf /etc/nginx/conf.d/
-
+# Copia el archivo de configuración personalizado para Nginx (sin `miweb/`)
+COPY nginx.conf /etc/nginx/conf.d/
 
 # Expone el puerto 80 para acceder a la aplicación
 EXPOSE 80
