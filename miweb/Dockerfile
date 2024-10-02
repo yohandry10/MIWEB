@@ -26,7 +26,8 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Copia el archivo de configuración personalizado para Nginx
-COPY ./nginx.conf /etc/nginx/conf.d
+COPY miweb/nginx.conf /etc/nginx/conf.d/
+
 
 # Expone el puerto 80 para acceder a la aplicación
 EXPOSE 80
