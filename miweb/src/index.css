@@ -1,6 +1,4 @@
-/* index.css */
-
-/* Estilos generales */
+/* General styles */
 body {
     background-color: #121212;
     color: #ffffff;
@@ -15,55 +13,90 @@ body.light-mode {
     color: #121212;
 }
 
-/* Estilos para la animación de flotación */
+/* Animation for floating effect */
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
 
-/* Configuración del banner */
+/* Banner configuration */
 .banner {
-    margin-top: 0;
-    padding: 150px 0 100px 0;
+    margin-top: 0; /* Eliminamos el margen superior */
+    padding: 170px 0 50px 0; /* Ajustamos el padding-top para compensar la altura del navbar */
     background-image: url('./assets/img/banner1.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
 }
 
-/* Estilo para la imagen flotante */
 .banner img {
     animation: float 3s ease-in-out infinite;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     position: relative;
 }
 
-/* Estilos para el navbar */
+@media (max-width: 768px) {
+    .banner {
+        padding-top: 150px; /* Ajustamos el padding-top en móviles */
+    }
+
+    .banner h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .banner p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .banner img {
+        max-width: 200px;
+        margin-top: 20px;
+    }
+}
+
+/* Navbar styles */
 .navbar-style {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 70px; /* Altura del navbar */
     background-color: #1c1c1c;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Asegura que el navbar esté por encima del contenido */
+    z-index: 1003;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
 }
 
 body.light-mode .navbar-style {
     background-color: #ffffff;
-    color: #121212;
 }
 
-/* Estilos para los enlaces del navbar */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
 .navbar-style .navbar-link {
     color: rgba(255, 255, 255, 0.75);
     font-weight: 400;
     letter-spacing: 0.8px;
-    padding: 0 25px;
+    padding: 0 15px;
     font-size: 18px;
     opacity: 0.75;
     transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .navbar-style .navbar-link:hover,
@@ -76,16 +109,11 @@ body.light-mode .navbar-style .navbar-link {
     color: rgba(0, 0, 0, 0.75);
 }
 
-.navbar-style .active.navbar-link {
-    color: #ffffff !important;
-    opacity: 1;
+body.light-mode .navbar-style .navbar-link:hover,
+body.light-mode .navbar-style .navbar-link.active {
+    color: #000000;
 }
 
-body.light-mode .navbar-style .active.navbar-link {
-    color: #000000 !important;
-}
-
-/* Ajustes de estilo para los íconos de tecnologías con Devicon */
 .navbar-icons i {
     font-size: 30px;
     margin-right: 10px;
@@ -96,14 +124,13 @@ body.light-mode .navbar-icons i {
     color: #121212;
 }
 
-/* Estilo para los botones del navbar */
 .navbar-style .dark-mode-button,
 .navbar-style .language-button {
     font-weight: 700;
     color: #ffffff;
     border: 1px solid #ffffff;
-    padding: 10px 18px;
-    font-size: 18px;
+    padding: 5px 10px;
+    font-size: 14px;
     margin-left: 10px;
     background-color: transparent;
     transition: 0.3s ease-in-out;
@@ -116,12 +143,7 @@ body.light-mode .navbar-style .language-button {
 }
 
 .navbar-style .dark-mode-button:hover,
-.navbar-style .language-button:hover {
-    color: #ffffff;
-    background-color: #FF4500;
-    border-color: #FF4500;
-}
-
+.navbar-style .language-button:hover,
 body.light-mode .navbar-style .dark-mode-button:hover,
 body.light-mode .navbar-style .language-button:hover {
     color: #ffffff;
@@ -129,7 +151,93 @@ body.light-mode .navbar-style .language-button:hover {
     border-color: #FF4500;
 }
 
-/* Estilos para el footer */
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1004;
+}
+
+.hamburger span {
+    height: 2px;
+    width: 25px;
+    background: #ffffff;
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .hamburger span {
+    background: #121212;
+}
+
+/* Dropdown menu styles for mobile */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1c1c1c;
+}
+
+body.light-mode .nav-menu {
+    background-color: #ffffff;
+}
+
+.nav-menu .navbar-link {
+    padding: 15px 20px;
+    color: #ffffff;
+    text-align: left;
+}
+
+body.light-mode .nav-menu .navbar-link {
+    color: #121212;
+}
+
+.nav-menu .dark-mode-button,
+.nav-menu .language-button {
+    margin: 10px 20px;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-style .dark-mode-button,
+    .navbar-style .language-button {
+        display: none;
+    }
+
+    .navbar-style {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding-bottom: 0;
+    }
+
+    .navbar-left {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-menu {
+        width: 100%;
+    }
+}
+
+
+/* Footer styles */
 .footer {
     background-color: #1c1c1c;
     color: #ffffff;
@@ -240,20 +348,13 @@ body.light-mode .footer-copy {
     margin-top: 10px;
 }
 
-/* Estilos para las secciones */
+/* Section styles */
 section {
-    padding-top: 120px; /* Aumentado para evitar superposición con el navbar */
+    padding-top: 120px;
+    scroll-margin-top: 70px;
 }
 
-body {
-    scroll-padding-top: 70px; /* Altura del navbar */
-}
-
-section {
-    scroll-margin-top: 70px; /* Altura del navbar */
-}
-
-/* Estilos para el Main */
+/* Main section styles */
 .main-section {
     background-color: #121212;
     color: #ffffff;
@@ -279,7 +380,7 @@ body.light-mode .main-section p {
     color: #4a4a4a;
 }
 
-/* Estilos para Skills y Projects */
+/* Skills and Projects section styles */
 .skills-section, .projects-section {
     background-color: #121212;
     color: #ffffff;
@@ -329,7 +430,7 @@ body.light-mode .projects-list .project-item p {
     color: #4a4a4a;
 }
 
-/* Enlaces en Skills y Projects */
+/* Links in Skills and Projects */
 .skills-list .skill-item a,
 .projects-list .project-item a {
     color: #FFD700;
@@ -342,16 +443,37 @@ body.light-mode .projects-list .project-item p {
     color: #FF4500;
 }
 
-/* Responsividad */
+/* Responsive styles */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(28, 28, 28, 0.9); /* Semi-transparent background */
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 20px 0;
+        z-index: 1000;
+    }
+
+    body.light-mode .nav-menu {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
     .navbar-style .navbar-link {
-        padding: 10px 15px;
+        margin: 2.5rem 0;
     }
 
     .navbar-style .dark-mode-button,
     .navbar-style .language-button {
-        font-size: 16px;
-        padding: 8px 12px;
+        margin: 0.5rem 0;
     }
 
     .footer-nav {
@@ -381,4 +503,6 @@ body.light-mode .projects-list .project-item p {
     .projects-list .project-item p {
         font-size: 16px;
     }
+
+    
 }
