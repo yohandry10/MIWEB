@@ -123,7 +123,7 @@ const Banner = () => {
                   <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
                     <span className="tagline">{t('Especialista DevOps.')}</span>
                     <h1>
-                      {t('¡Hola, soy Angel Ricardo Gadea!')}
+                      {t('¡Hola, soy Yohandry Chirinos!')}
                       <span className="txt-rotate" dataPeriod="1000">
                         <span className="wrap">{text}</span>
                       </span>
