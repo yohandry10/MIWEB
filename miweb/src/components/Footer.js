@@ -19,7 +19,7 @@ function Footer() {
           <Col md={4} className="text-start">
             <div className="footer-logo-container">
               <img src={logo} alt="Logo" className="footer-logo-img" />
-              <p className="footer-brand">© 2024 Yohandry Chirinos</p>
+              <p className="footer-brand">© 2024 by Angel Gadea</p>
             </div>
           </Col>
 
@@ -49,7 +49,7 @@ function Footer() {
         <Row className="footer-bottom">
           <Col>
             <div className="footer-copy">
-              <p>{t('Todos los derechos reservados. Desarrollado por Yohandry Chirinos.')}</p>
+              <p>{t('Todos los derechos reservados. Desarrollado por Andydev.@')}</p>
             </div>
           </Col>
         </Row>
